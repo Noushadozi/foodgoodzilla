@@ -18,7 +18,7 @@ const NavBar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">FOOD GODZILLA</a>
+                    <a className="btn btn-ghost text-xl">FOODGOODZILLA</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
