@@ -23,11 +23,9 @@ const Menu = () => {
                 <title>FoodGoodzilla | Menu</title>
             </Helmet>
             <Cover img={menuImg} title={"Our menu"}></Cover>
-            {/* Main cover */}
             <SectionTitle subHeading={"Don't miss"} heading={"Today's Offer"}></SectionTitle>
-            {/* offered menu items */}
             <MenuCategory items={offered}></MenuCategory>
-            {/* dessert menu items */}
+
             <MenuCategory items={deserts} title="dessert" img={desertImg}></MenuCategory>
             <MenuCategory items={pizza} img={pizzaImg} title={"pizza"}></MenuCategory>
             <MenuCategory items={salad} img={saladImg} title={"salad"}></MenuCategory>

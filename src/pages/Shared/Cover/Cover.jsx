@@ -1,4 +1,4 @@
-import { Parallax, Background } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 
 const Cover = ({ img, title }) => {
     return (
@@ -18,7 +18,6 @@ const Cover = ({ img, title }) => {
                     </div>
                 </div>
             </div>
-            {/* <div style={{ height: '200px' }} /> */}
         </Parallax>
     );
 };
