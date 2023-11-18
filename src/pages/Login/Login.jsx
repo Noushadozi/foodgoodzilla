@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
@@ -16,7 +17,7 @@ const Login = () => {
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, []);
-    
+
 
     const handleLogin = () => {
         event.preventDefault();
@@ -89,7 +90,9 @@ const Login = () => {
                                     className="btn btn-primary" type="submit" value={"login"} />
                             </div>
                         </form>
-                        <p><small>New here? <Link to={"/signUp"}>SIGN UP HERE!</Link></small></p>
+                        <SocialLogin></SocialLogin>
+                        <div className='divider mx-8'></div>
+                        <p className='px-8'><small>New here? <Link to={"/signUp"}>SIGN UP HERE!</Link></small></p>
                     </div>
                 </div>
             </div>

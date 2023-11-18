@@ -4,9 +4,11 @@ import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2'
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
-
+    const axiosPublic = useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -18,15 +20,26 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        reset();
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Register Successful",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate("/");
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to db')
+                                    reset();
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "Register Successful",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate("/");
+                                }
+                            })
+
                     })
                     .catch((error) => {
                         console.log(error);
@@ -104,7 +117,9 @@ const SignUp = () => {
                                 <input className="btn btn-primary" value={"sign up"} type="submit"></input>
                             </div>
                         </form>
-                        <p>already have an account? <Link to={"/login"}>Login here!</Link></p>
+                        <SocialLogin></SocialLogin>
+                        <div className="divider"></div>
+                        <p className="px-6">already have an account? <Link to={"/login"}>Login here!</Link></p>
                     </div>
                 </div>
             </div>
