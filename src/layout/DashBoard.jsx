@@ -1,4 +1,4 @@
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaShoppingCart, FaUser, FaUsers, FaUtensils, FaVoicemail } from "react-icons/fa";
+import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { VscThreeBars } from "react-icons/vsc";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
@@ -37,7 +37,7 @@ const DashBoard = () => {
                                     <NavLink to="/dashboard/userHome"><FaHome></FaHome>User Home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/reservation"><FaCalendar></FaCalendar>Reservation</NavLink>
+                                    <NavLink to="/dashboard/paymentHistory"><FaCalendar></FaCalendar>History</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/cart"><FaShoppingCart></FaShoppingCart>My cart<span className="text-[12px] font-bold">{cart.length}</span></NavLink>
@@ -46,7 +46,7 @@ const DashBoard = () => {
                                     <NavLink to="/dashboard/review"><FaAd></FaAd>Add a review</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/bookings"><FaList></FaList>MY bookings</NavLink>
+                                    <NavLink to="/dashboard/paymentHistory"><FaList></FaList>Payment Real History</NavLink>
                                 </li>
                             </>
                     }
