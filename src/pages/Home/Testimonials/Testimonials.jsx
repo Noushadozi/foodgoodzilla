@@ -10,7 +10,7 @@ import '@smastrom/react-rating/style.css'
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://foodgoodzilla-server.vercel.app/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
