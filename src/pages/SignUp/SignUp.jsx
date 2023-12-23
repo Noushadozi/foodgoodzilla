@@ -73,7 +73,6 @@ const SignUp = () => {
                                 </label>
 
                                 <input  {...register("name", { required: true })} name="name" type="text" placeholder="name" className="input input-bordered" />
-
                                 {errors.name && <span className="text-red-400">Name is required</span>}
                             </div>
                             <div className="form-control">

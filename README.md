@@ -1,8 +1,18 @@
-# React + Vite
+# live-link: https://foodgoodzilla.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technology used: Tailwind CSS, React, Node.js, Express.js, MongoDB, Stripe, Firebase, jwt(Json Web Token)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Packages used:
+* tanstack query
+* axios
+* dotenv
+* react-helmet-async
+* react-hook-form
+* react-icons
+* react-parallax
+* react-responsive-carousel
+* react-simple-captcha
+* react-tabs
+* recharts
+* sweetalert2
+* swiper
